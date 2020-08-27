@@ -18,7 +18,7 @@ def index():
     email = request.form['email']
     token = s.dumps(email, salt='confirm-email')
 
-    msg = Message('Confirm email', sender='shubhamsahaabhi.sk@gmail.com', recipients=[email])
+    msg = Message('Confirm email', sender='Senders Email', recipients=[email])
     link = url_for('confirm_email', token=token, _external=True)
 
     msg.body = f'Your link is {link}'
